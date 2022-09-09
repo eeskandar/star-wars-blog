@@ -24,10 +24,10 @@ const Layout = () => {
 						<Route exact path="/">
 							<Home />
 						</Route>
-						<Route exact path="/people/:uid">
+						<Route exact path="/people/:cid">
 							<SingleChar />
 						</Route>
-						<Route exact path="/planets/:uid">
+						<Route exact path="/planets/:pid">
 							<SinglePlanet />
 						</Route>
 						<Route>

@@ -15,9 +15,9 @@ export const Planets = ()=> {
         setPlanets(body.results)
 	}
 
-    const PlanetsMapping = planets.map((planet, i) => {
+    const PlanetsMapping = planets.map((planet) => {
         return (
-            <Card key={i} name={planet.name} url={`planets/${planet.uid}`}/>
+            <Card key={planet.pid} name={planet.name} url={`planets/${planet.pid}`}/>
         )
     })
 
