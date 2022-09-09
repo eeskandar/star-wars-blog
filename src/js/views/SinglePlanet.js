@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import { AdditionalInfo } from "../component/AdditionalInfo";
 
 export const SinglePlanet = ()=> {
@@ -16,7 +16,7 @@ export const SinglePlanet = ()=> {
         setSinglePlanet(body.result.properties)
 	}
 
-    useEffect(()=> getSinglePlanet("1"), [])
+    useEffect(()=> getSinglePlanet(params.uid), [])
 
     return (
         <div>
