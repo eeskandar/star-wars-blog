@@ -25,7 +25,7 @@ export const Characters = ()=> {
 
     return (
         <div>
-            <h1 className="ms-5">Characters</h1>
+            <h1 className="ms-5 text-danger">Characters</h1>
             <div className="d-flex mt-3 scroll-lat">
                 {CharMapping}
             </div>

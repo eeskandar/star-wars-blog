@@ -5,7 +5,7 @@ export const AdditionalInfo = (props)=> {
     return (
         <div>
             <h4 className="text-danger">{props.name}</h4>
-            <div className="text-center">{props.data}</div>
+            <div className="text-center text-danger">{props.data}</div>
         </div>
     )
 };

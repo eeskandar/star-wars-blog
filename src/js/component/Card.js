@@ -10,8 +10,8 @@ export const Card = (props) => {
 		<div className="card-body char-card">
 			<h5 className="card-title">{props.name}</h5>
 			<div className="d-flex justify-content-between mt-3">
-				<Link to={props.url} className="btn btn-primary">Learn more!</Link>
-				<button className="btn btn-outline-warning rounded"><i className="fa-regular fa-heart"></i></button>
+				<Link to={props.url} className="btn btn-outline-primary">Learn more!</Link>
+				<button className="btn btn-outline-warning rounded" data-bs-toggle="button"><i className="fa-regular fa-heart"></i></button>
 			</div>
 		</div>
 	</div>
