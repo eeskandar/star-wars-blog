@@ -15,9 +15,9 @@ export const Characters = ()=> {
         setCharacters(body.results)
 	}
 
-    const CharMapping = characters.map((char) => {
+    const CharMapping = characters.map((char, i) => {
             return (
-                <Card key={char.cid} name={char.name} url={`people/${char.cid}`}/>
+                <Card key={i} name={char.name} url={`people/${char.cid}`}/>
             )
         })
 
