@@ -8,4 +8,9 @@ export const AdditionalInfo = (props)=> {
             <div className="text-center text-danger">{props.data}</div>
         </div>
     )
+    
+    AdditionalInfo.propTypes = {
+        name: PropTypes.text,
+        data: PropTypes.text
+    }
 };

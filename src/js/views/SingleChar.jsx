@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { AdditionalInfo } from "../component/AdditionalInfo";
+import { AdditionalInfo } from "../component/AdditionalInfo.jsx";
 
 export const SingleChar = ()=> {
     const API_URL= "https://www.swapi.tech/api/"

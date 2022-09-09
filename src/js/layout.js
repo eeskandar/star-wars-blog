@@ -2,12 +2,12 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/ScrollToTop";
 
-import { Home } from "./views/Home";
-import { SingleChar } from "./views/SingleChar";
-import { SinglePlanet } from "./views/SinglePlanet";
+import { Home } from "./views/Home.jsx";
+import { SingleChar } from "./views/SingleChar.jsx";
+import { SinglePlanet } from "./views/SinglePlanet.jsx";
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/Navbar";
+import { Navbar } from "./component/Navbar.jsx";
 
 //create your first component
 const Layout = () => {

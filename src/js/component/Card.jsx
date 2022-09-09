@@ -16,4 +16,9 @@ export const Card = (props) => {
 		</div>
 	</div>
 	)
+	
+	Card.propTypes = {
+        name: PropTypes.text,
+        url: PropTypes.text
+    }
 };
