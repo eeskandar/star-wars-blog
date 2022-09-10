@@ -6,7 +6,14 @@ import "../../styles/index.css";
 export const Card = (props) => {
 	return (
 	<div className="rounded bg-white border ms-5 char-card">
-		<img src="https://res.cloudinary.com/teepublic/image/private/s--uRRMpMxL--/t_Resized%20Artwork/c_fit,g_north_west,h_1054,w_1054/co_ffffff,e_outline:53/co_ffffff,e_outline:inner_fill:53/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_auto,h_630,q_90,w_630/v1591539839/production/designs/11082438_0.jpg" className="card-img-top img-sizing" alt="..." />
+		 {
+			props.name == "Tatooine" ? (
+			<img src="https://res.cloudinary.com/teepublic/image/private/s--uRRMpMxL--/t_Resized%20Artwork/c_fit,g_north_west,h_1054,w_1054/co_ffffff,e_outline:53/co_ffffff,e_outline:inner_fill:53/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_auto,h_630,q_90,w_630/v1591539839/production/designs/11082438_0.jpg" className="card-img-top img-sizing" alt="..." />
+			)   
+			: (
+			<img src={`https://starwars-visualguide.com/assets/img/${props.img}.jpg`} alt="..." />
+			)
+		}
 		<div className="card-body char-card">
 			<h5 className="card-title">{props.name}</h5>
 			<div className="d-flex justify-content-between mt-3">
@@ -16,9 +23,8 @@ export const Card = (props) => {
 		</div>
 	</div>
 	)
-	
 	Card.propTypes = {
-        name: PropTypes.text,
-        url: PropTypes.text
-    }
+		name: PropTypes.text,
+		url: PropTypes.text
+	}
 };

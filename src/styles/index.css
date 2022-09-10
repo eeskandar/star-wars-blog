@@ -1,16 +1,16 @@
 .chard-card {
-    width: 300px;
+    width: 400px;
     box-sizing: content-box;
 }
 
 .img-sizing {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
 }
 
 .img-single-sizing {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 550px;
 }
 
 .scroll-lat {
