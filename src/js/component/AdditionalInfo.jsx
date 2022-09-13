@@ -9,8 +9,8 @@ export const AdditionalInfo = (props)=> {
         </div>
     )
     
-    AdditionalInfo.propTypes = {
-        name: PropTypes.text,
-        data: PropTypes.text
-    }
 };
+AdditionalInfo.propTypes = {
+    name: PropTypes.string,
+    data: PropTypes.string
+}

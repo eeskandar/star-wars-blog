@@ -17,7 +17,7 @@ export const Characters = ()=> {
 
     const CharMapping = characters.map((char, i) => {
             return (
-                <Card key={i} name={char.name} img={`characters/${char.uid}`} url={`people/${char.uid}`}/>
+                <Card key={i} name={char.name} styles="" type="characters" uid={char.uid} url={`people/${char.uid}`}/>
             )
         })
 
