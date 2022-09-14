@@ -3,11 +3,11 @@ import { Card } from "./Card.jsx"
 
 
 export const Planets = ()=> {
-    const API_URL= "https://www.swapi.tech/api/"
+    const API_URL_PLANETS= "https://www.swapi.tech/api/planets"
     const [planets, setPlanets] = useState([])
 
     async function getPlanets () {
-		const response = await fetch(API_URL + "planets")
+		const response = await fetch(API_URL_PLANETS)
 		if (!response.ok) {
 			new Error("Ocurrió un errorsote en la solicitud")
 		}

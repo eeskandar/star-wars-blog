@@ -31,7 +31,7 @@ export const SinglePlanet = ()=> {
                 }
                 <div className="mx-4 justify-content-center">
                     <h1>{singlePlanet.name}</h1>
-                    <p>Mucho texto</p>
+                    <p className="fs-5">Mucho texto</p>
                 </div>
             </div>
             <div className="d-flex justify-content-around mt-4 mx-3 pt-4 border-top border-2 border-danger">

@@ -6,7 +6,21 @@ import { Context } from "../store/appContext"
 
 export const Card = (props) => {
 	const { store, actions } = useContext(Context)
+	const [ active, setActive ] = useState(false)
+	const favorites = store.favorites
 	const setFavorites = actions.setFavorites
+	const setNewFavorites = actions.setNewFavorites
+
+
+	function deleteFav (name) {
+		const newList = favorites.filter((item, index)=> {
+			if (name == item.name) { 
+				return false
+			}
+			return true
+		})
+		setNewFavorites(newList)
+	}
 
 	return (
 	<div className="rounded bg-white border ms-5 char-card">
@@ -19,8 +33,17 @@ export const Card = (props) => {
 			<h5 className="card-title">{props.name}</h5>
 			<div className="d-flex justify-content-between mt-3">
 				<Link to={props.url} className="btn btn-outline-primary">Learn more!</Link>
-				{/*           here I think I have to use a conditional like favorites[props.name] ? "active" but need to ask more to know               */}
-				<button className="btn btn-outline-warning rounded" data-bs-toggle="button" onClick={(event) => {setFavorites(props.name)}}><i className="fa-regular fa-heart"></i></button>
+				<button className={`btn btn-outline-warning rounded ${active ? "active" : ""}`} 
+				onClick={(event) => {
+					if(!active) {
+						setFavorites(props.name, props.url)
+						setActive(true)
+					} if(active) {
+						deleteFav(props.name)
+						setActive(false)
+					}}}>
+					<i className="fa-regular fa-heart"></i>
+				</button>
 			</div>
 		</div>
 	</div>

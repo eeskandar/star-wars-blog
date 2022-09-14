@@ -9,10 +9,13 @@ export const Navbar = () => {
 
 	const FavsMapping = favorites.map((fav, i) => {
 		return (
-			<li key={i} className="px-2 py-1">{fav}<button key={i} type="button"
-			className="btn-close btn-close-dark float-end"
-			onClick={(event) => deleteFav(i)}></button></li>
-		)
+			<div key={i}>
+				<Link to={fav.url} className="px-2 py-1">{fav.name}</Link>
+				<button type="button"
+				className="btn-close btn-close-dark float-end px-2"
+				onClick={(event) => deleteFav(i)}></button>
+			</div>
+			)
 	})
 
 	function deleteFav (i) {

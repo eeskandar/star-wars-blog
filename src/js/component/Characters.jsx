@@ -3,11 +3,11 @@ import { Card } from "./Card.jsx"
 
 
 export const Characters = ()=> {
-    const API_URL= "https://www.swapi.tech/api/"
+    const API_URL_PPL= "https://www.swapi.tech/api/people"
     const [characters, setCharacters] = useState([])
 
     async function getCharacters () {
-		const response = await fetch(API_URL + "people")
+		const response = await fetch(API_URL_PPL)
 		if (!response.ok) {
 			new Error("Ocurrió un errorsote en la solicitud")
 		}
@@ -16,10 +16,10 @@ export const Characters = ()=> {
 	}
 
     const CharMapping = characters.map((char, i) => {
-            return (
-                <Card key={i} name={char.name} styles="" type="characters" uid={char.uid} url={`people/${char.uid}`}/>
-            )
-        })
+        return (
+            <Card key={i} name={char.name} styles="" type="characters" uid={char.uid} url={`people/${char.uid}`}/>
+        )
+    })
 
     useEffect (()=>{getCharacters()}, [])
 
