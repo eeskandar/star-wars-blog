@@ -27,9 +27,9 @@ export const Planets = ()=> {
     useEffect (()=>{getPlanets()}, [])
 
     return (
-        <div className="mt-5 pb-5">
+        <div className="mt-5">
             <h1 className="ms-5 text-danger">Planets</h1>
-            <div className="d-flex mt-3 scroll-lat">
+            <div className="d-flex mt-3 pb-3 scroll-lat">
                 {PlanetsMapping}
             </div>
         </div>

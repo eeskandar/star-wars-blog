@@ -22,8 +22,8 @@ export const Card = (props) => {
 	}
 
 	return (
-	<div className="rounded bg-white border ms-5 char-card">
-			<img src={`https://starwars-visualguide.com/assets/img/${props.imgtype}/${props.uid}.jpg`} className={props.imgstyles}
+	<div className="rounded bg-white border-0 ms-5 char-card">
+			<img src={`https://starwars-visualguide.com/assets/img/${props.imgtype}/${props.uid}.jpg`} className={`rounded-top ${props.imgstyles}`}
 			alt="..." onError={({ currentTarget }) => {
                 currentTarget.onerror = null; // prevents looping
                 currentTarget.src="https://starwars-visualguide.com/assets/img/placeholder.jpg";
@@ -31,8 +31,8 @@ export const Card = (props) => {
 		<div className="card-body char-card">
 			<h5 className="card-title">{props.name}</h5>
 			<div className="d-flex justify-content-between mt-3">
-				<Link to={`${props.urltype}/${props.uid}`} className="btn btn-outline-primary">Learn more!</Link>
-				<button className={`btn btn-outline-warning rounded ${props.btnstyles}`} 
+				<Link to={`${props.urltype}/${props.uid}`} className="btn btn-outline-warning">Learn more!</Link>
+				<button className={`btn btn-outline-danger rounded ${props.btnstyles}`} 
 				onClick={(event) => {
 					if(!favorites.find(fav => fav.name == props.name)) {
 						setFavorites(props.name, props.urltype, props.uid)

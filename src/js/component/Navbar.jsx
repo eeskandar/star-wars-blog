@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext"
+import starWars from "../../img/pngwing.com.png"
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context)
@@ -10,7 +11,7 @@ export const Navbar = () => {
 	const FavsMapping = favorites.map((fav, i) => {
 		return (
 			<div key={i}>
-				<Link to={`/${fav.type}/${fav.uid}`} className="px-2 py-1">{fav.name}</Link>
+				<Link to={`/${fav.type}/${fav.uid}`} className="px-2 py-1 text-decoration-none text-wawa fw-bold">{fav.name}</Link>
 				<button type="button"
 				className="btn-close btn-close-dark float-end px-2"
 				onClick={(event) => deleteFav(i)}></button>
@@ -29,12 +30,12 @@ export const Navbar = () => {
 	}
 
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
+		<nav className="navbar navbar-light bg-light p-0 sticky-top">
 			<Link to="/">
-				<span className="navbar-brand mb-0 h1 ms-5">Estar Guars</span>
+				<img src={starWars} alt="Star Wars" width="130" height="65" className="ms-5"/>
 			</Link>
 			<div className="dropdown">
-				<button className="btn btn-secondary dropdown-toggle me-5" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+				<button className="btn btn-dark dropdown-toggle me-5" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
 					Favorites ({favorites.length})
 				</button>
 				<ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
@@ -42,7 +43,7 @@ export const Navbar = () => {
 						favorites.length > 0 ? (
 							FavsMapping
 						) : (
-							<li className="px-2 py-1 fst-italic text-muted">You don't have Favs!</li>
+							<li className="px-2 fst-italic text-muted">Favs you don't have!</li>
 						)
 					}
 				</ul>

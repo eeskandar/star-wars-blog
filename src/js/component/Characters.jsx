@@ -29,7 +29,7 @@ export const Characters = ()=> {
     return (
         <div>
             <h1 className="ms-5 text-danger">Characters</h1>
-            <div className="d-flex mt-3 scroll-lat">
+            <div className="d-flex mt-3 pb-3 scroll-lat">
                 {CharMapping}
             </div>
         </div>

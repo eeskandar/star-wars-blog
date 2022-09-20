@@ -1,3 +1,11 @@
+body {
+    background-image: url(https://newevolutiondesigns.com/images/freebies/4k-space-wallpaper-1.jpg);
+    background-color: rgb(41, 41, 41);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 .chard-card {
     width: 400px;
     box-sizing: content-box;
@@ -8,6 +16,11 @@
     height: 400px;
 }
 
+.img-sizing-main {
+    width: 500px;
+    height: 500px;
+}
+
 .img-single-sizing {
     width: 400px;
     height: 550px;
@@ -15,4 +28,12 @@
 
 .scroll-lat {
     overflow-x: scroll;
+}
+
+.text-wawa {
+    color: black;
+}
+
+.text-wawa:hover {
+    color: orange
 }

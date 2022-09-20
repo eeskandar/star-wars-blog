@@ -23,8 +23,8 @@ export const SingleChar = ()=> {
             <div className="d-flex">
                 <img src={`https://starwars-visualguide.com/assets/img/characters/${params.cid}.jpg`} className="card-img-top img-single-sizing ms-3" alt="..." />
                 <div className="mx-4 justify-content-center">
-                    <h1>{singleChar.name}</h1>
-                    <p className="fs-5">Mucho texto</p>
+                    <h1 className="text-warning">{singleChar.name}</h1>
+                    <p className="text-warning fs-5">Mucho texto</p>
                 </div>
             </div>
             <div className="d-flex justify-content-around mt-4 mx-3 pt-4 border-top border-2 border-danger">
