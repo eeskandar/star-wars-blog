@@ -21,14 +21,14 @@ export const SinglePlanet = ()=> {
     return (
         <div>
             <div className="d-flex">
-                <img src={`https://starwars-visualguide.com/assets/img/planets/${params.pid}.jpg`} className="img-sizing-main ms-3"
+                <img src={`https://starwars-visualguide.com/assets/img/planets/${params.pid}.jpg`} className="img-sizing-main m-3"
                 alt="..." onError={({ currentTarget }) => {
                     currentTarget.onerror = null; // prevents looping
                     currentTarget.src="https://starwars-visualguide.com/assets/img/placeholder.jpg";
                 }}/>
                 <div className="mx-4 justify-content-center">
-                    <h1 className="text-warning">{singlePlanet.name}</h1>
-                    <p className="text-warning fs-5">Mucho texto</p>
+                    <h1 className="text-warning mt-3">{singlePlanet.name}</h1>
+                    <p className="text-warning fs-5">Mucho texto referente a este pechocho planeta que, la verdad, tiene demasiado que ofrecer seguramente.</p>
                 </div>
             </div>
             <div className="d-flex justify-content-around mt-4 mx-3 pt-4 border-top border-2 border-danger">
