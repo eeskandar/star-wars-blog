@@ -11,7 +11,6 @@ export const Card = (props) => {
 	const setFavorites = actions.setFavorites
 	const setNewFavorites = actions.setNewFavorites
 
-
 	function deleteFav (name) {
 		const newList = favorites.filter((item, index)=> {
 			if (name == item.name) { 
@@ -24,7 +23,7 @@ export const Card = (props) => {
 
 	return (
 	<div className="rounded bg-white border ms-5 char-card">
-			<img src={`https://starwars-visualguide.com/assets/img/${props.type}/${props.uid}.jpg`} className={props.styles}
+			<img src={`https://starwars-visualguide.com/assets/img/${props.imgtype}/${props.uid}.jpg`} className={props.imgstyles}
 			alt="..." onError={({ currentTarget }) => {
                 currentTarget.onerror = null; // prevents looping
                 currentTarget.src="https://starwars-visualguide.com/assets/img/placeholder.jpg";
@@ -32,15 +31,13 @@ export const Card = (props) => {
 		<div className="card-body char-card">
 			<h5 className="card-title">{props.name}</h5>
 			<div className="d-flex justify-content-between mt-3">
-				<Link to={props.url} className="btn btn-outline-primary">Learn more!</Link>
-				<button className={`btn btn-outline-warning rounded ${active ? "active" : ""}`} 
+				<Link to={`${props.urltype}/${props.uid}`} className="btn btn-outline-primary">Learn more!</Link>
+				<button className={`btn btn-outline-warning rounded ${props.btnstyles}`} 
 				onClick={(event) => {
-					if(!active) {
-						setFavorites(props.name, props.url)
-						setActive(true)
-					} if(active) {
+					if(!favorites.find(fav => fav.name == props.name)) {
+						setFavorites(props.name, props.urltype, props.uid)
+					} if(favorites.find(fav => fav.name == props.name)) {
 						deleteFav(props.name)
-						setActive(false)
 					}}}>
 					<i className="fa-regular fa-heart"></i>
 				</button>
@@ -51,5 +48,9 @@ export const Card = (props) => {
 };
 Card.propTypes = {
 	name: PropTypes.string,
-	url: PropTypes.string
+	imgtype: PropTypes.string,
+	imgstyles: PropTypes.string,
+	urltype: PropTypes.string,
+	btnstyles: PropTypes.string,
+	uid: PropTypes.string,
 }

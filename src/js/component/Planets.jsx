@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { Card } from "./Card.jsx"
+import { Context } from "../store/appContext"
 
 
 export const Planets = ()=> {
-    const API_URL_PLANETS= "https://www.swapi.tech/api/planets"
+    const { store, actions } = useContext(Context)
     const [planets, setPlanets] = useState([])
+    const favorites = store.favorites
+    const API_URL_PLANETS= "https://www.swapi.tech/api/planets"
 
     async function getPlanets () {
 		const response = await fetch(API_URL_PLANETS)
@@ -17,7 +20,7 @@ export const Planets = ()=> {
 
     const PlanetsMapping = planets.map((planet, i) => {
         return (
-            <Card key={i} name={planet.name} styles="img-sizing" type="planets" uid={planet.uid} url={`planets/${planet.uid}`}/>
+            <Card key={i} name={planet.name} imgstyles="img-sizing" btnstyles={`${favorites.find(fav => fav.name == planet.name)? "active" : ""}`} imgtype="planets" urltype="planets" uid={planet.uid}/>
         )
     })
 

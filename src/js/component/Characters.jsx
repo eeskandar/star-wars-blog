@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { Card } from "./Card.jsx"
+import { Context } from "../store/appContext"
 
 
 export const Characters = ()=> {
-    const API_URL_PPL= "https://www.swapi.tech/api/people"
+    const { store, actions } = useContext(Context)
     const [characters, setCharacters] = useState([])
+    const favorites = store.favorites
+    const API_URL_PPL= "https://www.swapi.tech/api/people"
 
     async function getCharacters () {
 		const response = await fetch(API_URL_PPL)
@@ -17,7 +20,7 @@ export const Characters = ()=> {
 
     const CharMapping = characters.map((char, i) => {
         return (
-            <Card key={i} name={char.name} styles="" type="characters" uid={char.uid} url={`people/${char.uid}`}/>
+            <Card key={i} name={char.name} imgstyles="" btnstyles={`${favorites.find(fav => fav.name == char.name)? "active" : ""}`} imgtype="characters" urltype="people" uid={char.uid}/>
         )
     })
 
